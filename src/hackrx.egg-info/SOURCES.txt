@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+src/hackrx.egg-info/PKG-INFO
+src/hackrx.egg-info/SOURCES.txt
+src/hackrx.egg-info/dependency_links.txt
+src/hackrx.egg-info/requires.txt
+src/hackrx.egg-info/top_level.txt
+src/parser/config.py
+src/parser/parser.py
+src/retrieval/loader.py
+src/utils/__init__.py
+src/utils/defs.py
