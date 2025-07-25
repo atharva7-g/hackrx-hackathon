@@ -1,9 +1,10 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.prompts import ChatPromptTemplate
+from config import config_init
 
 EXAMPLE_QUERY = "46-year-old male, knee surgery in Pune, 3-month-old insurance policy"
 DOCUMENTS_PATH = "./data/documents"
 
+config_init()
 
 def create_gemini_llm():
     return ChatGoogleGenerativeAI(
@@ -14,7 +15,6 @@ def create_gemini_llm():
         max_retries=2,
     )
 
-
 messages = [
     ("system", "You are an expert assistant that parses natural language insurance queries to extract structured information."),
 
@@ -23,4 +23,8 @@ messages = [
     ("human", f"Query: {EXAMPLE_QUERY}")
 ]
 
+llm = create_gemini_llm()
+
 response = llm.invoke(messages)
+
+print(response.content)
